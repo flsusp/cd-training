@@ -11,4 +11,31 @@
 		<module>initial</module>
 	</modules>
 
+        <pluginRepositories>
+                <pluginRepository>
+                        <id>mycontainer</id>
+                        <url>http://repo.pyrata.org/release/maven2</url>
+                </pluginRepository>
+        </pluginRepositories>
+        <repositories>
+                <repository>
+                        <id>mycontainer</id>
+                        <url>http://repo.pyrata.org/release/maven2</url>
+                </repository>
+                <repository>
+                        <id>static</id>
+                        <url>http://dextra.github.com/dextra-maven-repo/repository/</url>
+                        <snapshots>
+                                <enabled>false</enabled>
+                        </snapshots>
+                        <releases>
+                                <updatePolicy>never</updatePolicy>
+                        </releases>
+                </repository>
+                <repository>
+                        <id>jboss-releases</id>
+                        <url>https://repository.jboss.org/nexus/content/repositories/releases/</url>
+                </repository>
+        </repositories>
+
 </project>
