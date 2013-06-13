@@ -12,7 +12,7 @@ public class BoneCPJDBCStoreService implements SQLStoreService {
 
 	private final BoneCP pool;
 
-	private BoneCPJDBCStoreService() {
+	public BoneCPJDBCStoreService() {
 		super();
 		BoneCPConfig config = new BoneCPConfig();
 		config.setDefaultAutoCommit(true);

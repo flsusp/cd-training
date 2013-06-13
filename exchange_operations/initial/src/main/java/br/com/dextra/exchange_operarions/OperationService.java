@@ -7,10 +7,17 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import br.com.dextra.exchange_operarions.cash_register.CashRegister;
+import br.com.dextra.exchange_operarions.cash_register.JustLogCashRegister;
+import br.com.dextra.exchange_operarions.currency_converter.CurrencyConverter;
+import br.com.dextra.exchange_operarions.currency_converter.MockedCurrencyConverter;
+
 @Path("operation")
 public class OperationService {
 
 	private final OperationRepository operationRepository = new OperationRepository();
+	private final CashRegister cashRegister = new JustLogCashRegister();
+	private final CurrencyConverter currencyConverter = new MockedCurrencyConverter();
 
 	@POST
 	@Path("")
@@ -22,7 +29,7 @@ public class OperationService {
 		operation.setValue(value);
 		operation.setCurrency(currency);
 
-		operation.exchange();
+		operation.exchange(cashRegister, currencyConverter);
 
 		operationRepository.save(operation);
 
