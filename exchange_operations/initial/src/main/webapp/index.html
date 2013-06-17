@@ -14,10 +14,10 @@
 					type: 'POST',
 					data: { value : value, clientDocument : client, currency : 'USD' },
 					success: function() {
-						$('.message').html('Opera&ccedil;&atilde;o criada com sucesso!!!');
+						$('.message').html('<span class=\'success\'>Operacao criada com sucesso!!!</span>');
 					},
 					error: function() {
-						$('.message').html('Erro ao criar opera&ccedil;&atilde;o!!!');
+						$('.message').html('<span class=\'success\'>Erro ao criar operacao!!!</span>');
 					}
 				});
 			});
