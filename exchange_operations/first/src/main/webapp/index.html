@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<title>Operation Service</title>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+			$('#submit').click(function() {
+				var value = $('form input#value').val();
+				var client = $('form input#client').val();
+
+				$.ajax({
+					url: 'r/operation',
+					type: 'POST',
+					data: { value : value, clientDocument : client, currency : 'USD' },
+					success: function() {
+						$('.message').html('<span class=\'success\'>Operacao criada com sucesso!!!</span>');
+					},
+					error: function() {
+						$('.message').html('<span class=\'success\'>Erro ao criar operacao!!!</span>');
+					}
+				});
+			});
+		});
+		</script>
+</head>
+<body>
+	<form>
+		<ul>
+			<li class="message"></li>
+			<li><label for="value">Valor:</label> <input type="text"
+				id="value" name="value" /></li>
+			<li><label for="client">Cliente:</label> <input type="text"
+				id="client" name="client" /></li>
+			<li><input type="button" id="submit" value="Gerar"></input></li>
+		</ul>
+	</form>
+</body>
+</html>

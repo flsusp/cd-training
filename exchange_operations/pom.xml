@@ -9,6 +9,7 @@
 
 	<modules>
 		<module>initial</module>
+		<module>first</module>
 	</modules>
 
         <pluginRepositories>
