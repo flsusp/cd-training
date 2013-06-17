@@ -1,4 +1,4 @@
-package br.com.dextra.exchange_operarions;
+package br.com.dextra.exchange_operations;
 
 import static org.junit.Assert.assertEquals;
 
@@ -7,8 +7,10 @@ import java.util.List;
 
 import org.junit.Test;
 
-import br.com.dextra.exchange_operarions.cash_register.CashRegister;
 import br.com.dextra.exchange_operarions.currency_converter.MockedCurrencyConverter;
+import br.com.dextra.exchange_operations.Currency;
+import br.com.dextra.exchange_operations.ExchangeOperation;
+import br.com.dextra.exchange_operations.cash_register.CashRegister;
 
 public class ExchangeOperationTest {
 

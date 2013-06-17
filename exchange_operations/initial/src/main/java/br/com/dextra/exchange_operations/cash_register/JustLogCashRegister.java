@@ -1,9 +1,9 @@
-package br.com.dextra.exchange_operarions.cash_register;
+package br.com.dextra.exchange_operations.cash_register;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import br.com.dextra.exchange_operarions.Currency;
+import br.com.dextra.exchange_operations.Currency;
 
 public class JustLogCashRegister implements CashRegister {
 

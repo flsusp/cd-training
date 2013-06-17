@@ -1,6 +1,6 @@
 package br.com.dextra.exchange_operarions.currency_converter;
 
-import br.com.dextra.exchange_operarions.Currency;
+import br.com.dextra.exchange_operations.Currency;
 
 public class MockedCurrencyConverter implements CurrencyConverter {
 

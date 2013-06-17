@@ -1,12 +1,12 @@
-package br.com.dextra.exchange_operarions;
+package br.com.dextra.exchange_operations;
 
 import java.util.Date;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import br.com.dextra.exchange_operarions.cash_register.CashRegister;
 import br.com.dextra.exchange_operarions.currency_converter.CurrencyConverter;
+import br.com.dextra.exchange_operations.cash_register.CashRegister;
 
 public class ExchangeOperation {
 

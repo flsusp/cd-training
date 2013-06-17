@@ -1,4 +1,4 @@
-package br.com.dextra.exchange_operarions;
+package br.com.dextra.exchange_operations;
 
 import javax.ws.rs.FormParam;
 import javax.ws.rs.POST;
@@ -7,17 +7,23 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import br.com.dextra.exchange_operarions.cash_register.CashRegister;
-import br.com.dextra.exchange_operarions.cash_register.JustLogCashRegister;
 import br.com.dextra.exchange_operarions.currency_converter.CurrencyConverter;
 import br.com.dextra.exchange_operarions.currency_converter.MockedCurrencyConverter;
+import br.com.dextra.exchange_operations.cash_register.CashRegister;
+import br.com.dextra.exchange_operations.cash_register.JustLogCashRegister;
+import br.com.dextra.sqlstore.SQLStoreService;
 
 @Path("operation")
 public class OperationService {
 
-	private final OperationRepository operationRepository = new OperationRepository();
+	private final OperationRepository operationRepository;
 	private final CashRegister cashRegister = new JustLogCashRegister();
 	private final CurrencyConverter currencyConverter = new MockedCurrencyConverter();
+
+	public OperationService(SQLStoreService service) {
+		super();
+		this.operationRepository = new OperationRepository(service);
+	}
 
 	@POST
 	@Path("")

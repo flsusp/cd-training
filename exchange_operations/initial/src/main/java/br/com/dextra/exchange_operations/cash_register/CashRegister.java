@@ -1,6 +1,6 @@
-package br.com.dextra.exchange_operarions.cash_register;
+package br.com.dextra.exchange_operations.cash_register;
 
-import br.com.dextra.exchange_operarions.Currency;
+import br.com.dextra.exchange_operations.Currency;
 
 public interface CashRegister {
 

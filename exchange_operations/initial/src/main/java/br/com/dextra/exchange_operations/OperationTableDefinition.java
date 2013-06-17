@@ -1,4 +1,4 @@
-package br.com.dextra.exchange_operarions;
+package br.com.dextra.exchange_operations;
 
 import br.com.dextra.sqlstore.Field;
 import br.com.dextra.sqlstore.Name;
