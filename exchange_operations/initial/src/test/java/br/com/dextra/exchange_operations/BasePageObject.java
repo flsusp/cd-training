@@ -27,8 +27,8 @@ public class BasePageObject {
 
 	private static final Logger logger = LoggerFactory.getLogger(BasePageObject.class);
 
-	private static int TIMEOUT = 5;
-	private static final int SLEEP = 500;
+	private static int TIMEOUT = 2;
+	private static final int SLEEP = 100;
 
 	protected static WebDriver driver;
 

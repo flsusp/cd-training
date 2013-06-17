@@ -27,18 +27,20 @@ public class OperationServiceTest extends BaseFunctionalTest {
 	}
 
 	public static void main(String[] args) throws Exception {
-		startContainers();
-
 		OperationPage operation = new OperationPage();
 
 		Random random = new Random();
 
 		while (true) {
-			operation.start();
-			operation.setValue(random.nextDouble() * 100.0);
-			operation.setClient(RandomStringUtils.randomNumeric(10));
-			operation.create();
-			operation.assertSuccess();
+			try {
+				operation.start();
+				operation.setValue(random.nextDouble() * 100.0);
+				operation.setClient(RandomStringUtils.randomNumeric(10));
+				operation.create();
+				operation.assertSuccess();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 	}
 }
