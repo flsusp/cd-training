@@ -1,4 +1,4 @@
-package br.com.dextra.exchange_operarions.currency_converter;
+package br.com.dextra.exchange_operations.currency_converter;
 
 import br.com.dextra.exchange_operations.Currency;
 

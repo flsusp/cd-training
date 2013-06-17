@@ -7,10 +7,10 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import br.com.dextra.exchange_operarions.currency_converter.CurrencyConverter;
-import br.com.dextra.exchange_operarions.currency_converter.MockedCurrencyConverter;
 import br.com.dextra.exchange_operations.cash_register.CashRegister;
 import br.com.dextra.exchange_operations.cash_register.JustLogCashRegister;
+import br.com.dextra.exchange_operations.currency_converter.CurrencyConverter;
+import br.com.dextra.exchange_operations.currency_converter.MockedCurrencyConverter;
 import br.com.dextra.sqlstore.SQLStoreService;
 
 @Path("operation")
