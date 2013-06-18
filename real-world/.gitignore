@@ -1,0 +1,10 @@
+# eclipse files
+.project
+.classpath
+.settings
+
+# target files
+bin
+target
+.metadata
+WEB-INF
