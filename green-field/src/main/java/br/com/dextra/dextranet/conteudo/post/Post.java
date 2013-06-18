@@ -1,7 +1,6 @@
 package br.com.dextra.dextranet.conteudo.post;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -68,21 +67,6 @@ public class Post extends Conteudo implements ConteudoIndexavel {
 
 	public Date getDataDeAtualizacao() {
 		return dataDeAtualizacao;
-	}
-
-	@Deprecated
-	public Comentario comentarParaMigracao(String username, String conteudo, Date data, String timestamp) {
-		Comentario comentario = new Comentario(this.id, username, new ConteudoHTML(conteudo).removeJavaScript());
-
-		Calendar calendar = Calendar.getInstance();
-		calendar.setTimeInMillis(Long.parseLong(timestamp));
-		data = calendar.getTime();
-
-		comentario.registraDataDeMigracao(data);
-		this.dataDeAtualizacao = data;
-
-		comentarios.add(comentario);
-		return comentario;
 	}
 
 	public Comentario comentar(String username, String conteudo) {
