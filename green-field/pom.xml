@@ -330,7 +330,7 @@
 			<dependency>
 				<groupId>br.com.dextra</groupId>
 				<artifactId>expertus</artifactId>
-				<version>1.0.14</version>
+				<version>1.0.14.1</version>
 			</dependency>
 			<dependency>
 				<groupId>org.owasp</groupId>
@@ -362,7 +362,7 @@
 	</dependencyManagement>
 
 	<profiles>
-		<!-- Profile que executa os testes unitarios, de integracao e de selenium 
+		<!-- Profile que executa os testes unitarios, de integracao e de selenium
 			localmente -->
 		<profile>
 			<id>selenium</id>
@@ -398,7 +398,7 @@
 				</plugins>
 			</build>
 		</profile>
-		<!-- Profile que executa os testes unitarios, de integracao e de selenium 
+		<!-- Profile que executa os testes unitarios, de integracao e de selenium
 			no ambiente de integracao continua -->
 		<profile>
 			<id>integracao-continua</id>
