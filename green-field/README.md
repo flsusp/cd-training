@@ -13,7 +13,7 @@ Para construir seu ambiente de desenvolvimento, você precisará gerar os arquiv
 mvn eclipse:eclipse
 ```
 
-Para subir a aplicação e testá-la locamente, existem duas possibilidades:
+Para subir a aplicação e testá-la localmente, existem duas possibilidades:
 ```
 mvn mycontainer:start
 ```
