@@ -54,9 +54,3 @@ Para subir a aplicação e testá-la localmente:
 ```
 mvn mycontainer:start
 ```
-
-Ambiente de Deploy
-------------------
-
-A aplicação está configurada para utilizar o seguinte ambiente de deploy:
-[http://dextraining-intranet-cd.appspot.com/](http://dextraining-intranet-cd.appspot.com/)
