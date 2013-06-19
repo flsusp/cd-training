@@ -17,7 +17,7 @@ public class BoneCPJDBCStoreService implements SQLStoreService {
 		BoneCPConfig config = new BoneCPConfig();
 		config.setDefaultAutoCommit(true);
 		config.setStatisticsEnabled(true);
-		config.setJdbcUrl("jdbc:postgresql://localhost:5432/countinuous-delivery");
+		config.setJdbcUrl("jdbc:postgresql://localhost:5432/continuous-delivery");
 		config.setUsername("dextraining");
 		config.setPassword("dextraining");
 		config.setPartitionCount(2);
