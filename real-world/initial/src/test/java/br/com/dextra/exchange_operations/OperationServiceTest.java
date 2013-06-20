@@ -18,7 +18,7 @@ public class OperationServiceTest extends BaseFunctionalTest {
 
 	@Test
 	public void testCreatedOperationByWeb() {
-		OperationPage operation = new OperationPage();
+		OperationPage operation = new OperationPage(8080);
 		operation.start();
 		operation.setValue(100.0);
 		operation.setClient("123");
@@ -27,7 +27,7 @@ public class OperationServiceTest extends BaseFunctionalTest {
 	}
 
 	public static void main(String[] args) throws Exception {
-		OperationPage operation = new OperationPage();
+		OperationPage operation = new OperationPage(80);
 
 		Random random = new Random();
 
