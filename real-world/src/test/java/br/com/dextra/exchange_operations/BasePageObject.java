@@ -1,6 +1,5 @@
 package br.com.dextra.exchange_operations;
 
-import java.io.File;
 import java.text.Normalizer;
 import java.util.List;
 
