@@ -1,5 +1,6 @@
 package br.com.dextra.exchange_operations;
 
+import java.io.File;
 import java.text.Normalizer;
 import java.util.List;
 
@@ -59,7 +60,7 @@ public class BasePageObject {
 	protected static boolean browserIsOpen() {
 		return driver != null;
 	}
-
+	
 	protected static WebDriver browser() {
 		try {
 			if (driver != null) {
@@ -77,7 +78,7 @@ public class BasePageObject {
 				caps.setJavascriptEnabled(true);
 				caps.setCapability(CapabilityType.PROXY, proxy);
 				caps.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY,
-						"/home/fabio/bin/phantomjs-1.9.1-linux-x86_64/bin/phantomjs");
+						"../tools/phantomjs");
 				driver = new PhantomJSDriver(caps);
 
 				final WebDriver driverRef = driver;
