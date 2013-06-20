@@ -25,6 +25,6 @@ public class OperationPage extends BasePageObject {
 	}
 
 	public void assertSuccess() {
-		waitForElement(By.cssSelector(".message .success"));
+		waitForElement(By.cssSelector(".alert-success"));
 	}
 }
