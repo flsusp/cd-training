@@ -151,4 +151,44 @@
 		</repository>
 	</repositories>
 
+	<profiles>
+		<profile>
+			<id>myc01</id>
+			<activation>
+				<property>
+					<name>myc01</name>
+				</property>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>com.googlecode.mycontainer</groupId>
+						<artifactId>mycontainer-maven-plugin</artifactId>
+						<configuration>
+							<script>src/test/resources/mycontainer-start-01.bsh</script>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>myc02</id>
+			<activation>
+				<property>
+					<name>myc02</name>
+				</property>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>com.googlecode.mycontainer</groupId>
+						<artifactId>mycontainer-maven-plugin</artifactId>
+						<configuration>
+							<script>src/test/resources/mycontainer-start-02.bsh</script>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>

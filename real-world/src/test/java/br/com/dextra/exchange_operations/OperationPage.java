@@ -4,6 +4,10 @@ import org.openqa.selenium.By;
 
 public class OperationPage extends BasePageObject {
 
+	public OperationPage(int port) {
+		super(port);
+	}
+
 	public void start() {
 		open("index.html");
 	}

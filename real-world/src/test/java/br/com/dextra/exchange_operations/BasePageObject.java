@@ -32,6 +32,12 @@ public class BasePageObject {
 
 	protected static WebDriver driver;
 
+	private final int port;
+
+	public BasePageObject(int port) {
+		this.port = port;
+	}
+
 	protected void open(String contextPath) {
 		open(contextPath, By.tagName("body"));
 	}
@@ -47,13 +53,13 @@ public class BasePageObject {
 	}
 
 	protected String buildURL(String contextPath) {
-		return "http://localhost:8080/" + contextPath;
+		return "http://localhost:" + port + "/" + contextPath;
 	}
 
 	protected static boolean browserIsOpen() {
 		return driver != null;
 	}
-
+	
 	protected static WebDriver browser() {
 		try {
 			if (driver != null) {
@@ -71,7 +77,7 @@ public class BasePageObject {
 				caps.setJavascriptEnabled(true);
 				caps.setCapability(CapabilityType.PROXY, proxy);
 				caps.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY,
-						"/projects/shared/fab_subsistencia/tools/phantomjs/bin/phantomjs");
+						"../tools/phantomjs");
 				driver = new PhantomJSDriver(caps);
 
 				final WebDriver driverRef = driver;
