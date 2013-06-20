@@ -1,4 +1,4 @@
-package br.com.dextra.exchange_operations;
+package br.com.dextra.test;
 
 import org.junit.BeforeClass;
 

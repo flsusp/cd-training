@@ -2,6 +2,8 @@ package br.com.dextra.exchange_operations;
 
 import org.openqa.selenium.By;
 
+import br.com.dextra.test.BasePageObject;
+
 public class OperationPage extends BasePageObject {
 
 	public OperationPage(int port) {

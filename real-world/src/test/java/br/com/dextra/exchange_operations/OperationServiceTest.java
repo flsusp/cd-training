@@ -6,6 +6,7 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.Test;
 
 import br.com.dextra.sqlstore.impl.BoneCPJDBCStoreService;
+import br.com.dextra.test.BaseFunctionalTest;
 
 public class OperationServiceTest extends BaseFunctionalTest {
 
@@ -41,6 +42,8 @@ public class OperationServiceTest extends BaseFunctionalTest {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+
+			Thread.sleep(1000);
 		}
 	}
 }

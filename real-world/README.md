@@ -40,7 +40,22 @@ Para garantir que as atualizações sejam carregadas, execute o comando abaixo:
 sudo su - postgres
 pg_ctlcluster 9.1 main reload
 ```
-Feito isso, você estará com seu banco de dados preparado para ser acessado pela aplicação que trabalharemos e pelo pgadmin.
+Feito isso, você estará com seu banco de dados preparado para ser acessado pela aplicação que trabalharemos e pelo pgadmin. Precisamos agora configurar o apache para que o exercício funcione corretamente.
+```
+sudo su -
+apt-get install apache2
+a2enmod proxy proxy_http proxy_balancer
+```
+Crie o arquivo /etc/apache2/conf.d/continuous-delivery com o seguinte conteúdo:
+```
+<VirtualHost *:80>
+        <Proxy balancer://mycluster>
+                BalancerMember http://localhost:8081 loadfactor=1
+                BalancerMember http://localhost:8082 loadfactor=2
+        </Proxy>
+        ProxyPass / balancer://mycluster/
+</VirtualHost>
+```
 
 Ambiente de Desenvolvimento
 ---------------------------
@@ -53,4 +68,10 @@ mvn eclipse:eclipse
 Para subir a aplicação e testá-la localmente:
 ```
 mvn mycontainer:start
+```
+
+Para testar o cenário com dois servidores no ar, acessando pelo apache:
+```
+mvn mycontainer:start -Dmyc01
+mvn mycontainer:start -Dmyc02
 ```

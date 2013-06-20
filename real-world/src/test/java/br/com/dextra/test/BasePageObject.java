@@ -1,4 +1,4 @@
-package br.com.dextra.exchange_operations;
+package br.com.dextra.test;
 
 import java.text.Normalizer;
 import java.util.List;
