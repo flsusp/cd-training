@@ -15,6 +15,27 @@ public class ComentarioTesteFuncional extends TesteFuncionalBase {
 	private PaginaNovoComentario paginaNovoComentario;
 
 	@Test
+	public void testNovoPostComTags() {
+		dadoQueUsuarioAcessaPaginaPrincipal();
+		eleCriaPostComTags();
+		checaSePostFoiCriadoComTags();
+	}
+
+	private void checaSePostFoiCriadoComTags() {
+		paginaPrincipal.acessaPaginaPrincipal();
+		paginaPrincipal.confereExistenciaDeTags();
+	}
+
+	private void eleCriaPostComTags() {
+		tituloPost = "Titulo de Teste";
+		String conteudo = "Texto do teste";
+		String tags = "#treinamento #teste";
+
+		paginaNovoPost = paginaPrincipal.clicaEmNovoPost();
+		paginaNovoPost.criarNovoPost(tituloPost, conteudo, tags);
+	}
+
+	@Test
 	public void testComentario() {
 		dadoQueUsuarioAcessaPaginaPrincipal();
 		eleCriaPost();

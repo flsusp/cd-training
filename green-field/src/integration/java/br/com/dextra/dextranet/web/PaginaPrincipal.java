@@ -67,4 +67,8 @@ public class PaginaPrincipal extends PaginaBase {
 
 		return false;
 	}
+
+	public void confereExistenciaDeTags() {
+		driver.findElement(By.cssSelector("div.tags"));
+	}
 }

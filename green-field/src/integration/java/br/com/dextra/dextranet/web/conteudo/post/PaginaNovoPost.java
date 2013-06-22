@@ -72,4 +72,16 @@ public class PaginaNovoPost extends PaginaBase {
 		this.idPost = idPost;
 	}
 
+	public void criarNovoPost(String tituloPost, String conteudo, String tags) {
+		this.redigeConteudoDoPost(tituloPost, conteudo, tags);
+		this.submetePost();
+	}
+
+	private void redigeConteudoDoPost(String tituloPost, String conteudo,
+			String tags) {
+		this.redigeTextoInput(tituloPost, "form_input_title");
+		this.redigeCKEditor(conteudo, "form_input_content");
+		this.redigeTextoInput(tags, "form_input_tags");
+	}
+
 }
