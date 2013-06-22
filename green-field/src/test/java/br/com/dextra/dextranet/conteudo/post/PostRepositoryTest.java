@@ -25,6 +25,15 @@ public class PostRepositoryTest extends TesteIntegracaoBase {
 	}
 
 	@Test
+	public void testaInsercaoComTags() throws EntityNotFoundException {
+		Post novoPost = new Post("usuario", "titulo", "conteudo", "#treinamento");
+		repositorio.persiste(novoPost);
+
+		Post postPersistido = repositorio.obtemPorId(novoPost.getId());
+		Assert.assertEquals("#treinamento", postPersistido.getTags());
+	}
+
+	@Test
 	public void testaRemocao() {
 		Post novoPost = new Post("usuario", "titulo", "conteudo");
 

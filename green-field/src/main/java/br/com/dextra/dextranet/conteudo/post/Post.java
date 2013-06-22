@@ -38,6 +38,7 @@ public class Post extends Conteudo implements ConteudoIndexavel {
 		this.comentarios = new ArrayList<Comentario>();
 		this.id = (String) postEntity.getProperty(PostFields.id.name());
 		this.titulo = (String) postEntity.getProperty(PostFields.titulo.name());
+		this.tags = (String) postEntity.getProperty(PostFields.tags.name());
 		this.conteudo = ((Text) postEntity.getProperty(PostFields.conteudo.name())).getValue();
 		this.quantidadeDeCurtidas = (Long) postEntity.getProperty(PostFields.quantidadeDeCurtidas.name());
 		this.usuariosQueCurtiram = (List<String>) postEntity.getProperty(PostFields.usuariosQueCurtiram.name());
@@ -99,6 +100,7 @@ public class Post extends Conteudo implements ConteudoIndexavel {
 		entidade.setProperty(PostFields.id.name(), this.id);
 		entidade.setProperty(PostFields.titulo.name(), this.titulo);
 		entidade.setProperty(PostFields.conteudo.name(), new Text(this.conteudo));
+		entidade.setProperty(PostFields.tags.name(), this.tags);
 		entidade.setProperty(PostFields.quantidadeDeCurtidas.name(), this.quantidadeDeCurtidas);
 		entidade.setProperty(PostFields.usuariosQueCurtiram.name(), this.usuariosQueCurtiram);
 		entidade.setProperty(PostFields.usuario.name(), this.usuario);
