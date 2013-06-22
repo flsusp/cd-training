@@ -37,6 +37,16 @@ public class PostRSTest extends TesteIntegracaoBase {
 	}
 
 	@Test
+	public void testaInsercaoComTags() {
+		rest.inserir("titulo", "conteudo", "#treinamento");
+
+		List<Post> postsInseridos = repositorioDePosts.lista();
+		Post post = postsInseridos.get(0);
+
+		Assert.assertEquals("#treinamento", post.getTags());
+	}
+
+	@Test
 	public void testaListarTodosOrdenados() {
 		Post post01 = new Post("usuario", "titulo 01", "conteudo 01");
 		Post post02 = new Post("usuario", "titulo 02", "conteudo 02");

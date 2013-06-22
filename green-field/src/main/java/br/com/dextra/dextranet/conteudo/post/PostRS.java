@@ -38,8 +38,8 @@ public class PostRS {
 	@Path("/")
 	@POST
 	@Produces(Application.JSON_UTF8)
-	public Response inserir(@FormParam("titulo") String titulo, @FormParam("conteudo") String conteudo) {
-		Post  post = new Post(obtemUsuarioLogado(), titulo, conteudo);
+	public Response inserir(@FormParam("titulo") String titulo, @FormParam("conteudo") String conteudo, @FormParam("tags") String tags) {
+		Post  post = new Post(obtemUsuarioLogado(), titulo, conteudo, tags);
 		repositorioDePosts.persiste(post);
 		return Response.ok().entity(post).build();
 	}
