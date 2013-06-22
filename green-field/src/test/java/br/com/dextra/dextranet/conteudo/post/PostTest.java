@@ -21,8 +21,9 @@ public class PostTest extends TesteIntegracaoBase {
 
 	@Test
 	public void testaConstrutor() {
-		Post novoPost = new Post("dextranet", "titulo", "conteudo");
+		Post novoPost = new Post("dextranet", "titulo", "conteudo", "#treinamento #teste");
 		Assert.assertEquals("39566cf6ac41da40deb7c6452a9ed94b", novoPost.getUsuarioMD5());
+		Assert.assertEquals("#treinamento #teste", novoPost.getTags());
 		Assert.assertEquals(0, novoPost.getQuantidadeDeComentarios());
 		Assert.assertEquals(0, novoPost.getQuantidadeDeCurtidas());
 		Assert.assertEquals(timeMachine.formataData(timeMachine.dataAtual()),

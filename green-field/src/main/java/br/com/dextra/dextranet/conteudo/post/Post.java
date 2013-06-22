@@ -23,6 +23,8 @@ public class Post extends Conteudo implements ConteudoIndexavel {
 
 	private List<Comentario> comentarios;
 
+	private String tags;
+
 	public Post(String usuario, String titulo, String conteudo) {
 		super(usuario);
 		this.preenche(titulo, conteudo);
@@ -45,6 +47,11 @@ public class Post extends Conteudo implements ConteudoIndexavel {
 		if (this.usuariosQueCurtiram == null) {
 			this.usuariosQueCurtiram = new ArrayList<String>();
 		}
+	}
+
+	public Post(String usuario, String titulo, String conteudo, String tags) {
+		this(usuario, titulo, conteudo);
+		this.tags = tags;
 	}
 
 	public Post preenche(String titulo, String conteudo) {
@@ -126,5 +133,9 @@ public class Post extends Conteudo implements ConteudoIndexavel {
 
 		super.registraDataDeMigracao(dataFormatada);
 		this.dataDeAtualizacao = dataFormatada;
+	}
+
+	public String getTags() {
+		return this.tags;
 	}
 }
