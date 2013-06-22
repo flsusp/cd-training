@@ -10,6 +10,7 @@ dextranet.post = {
 		postar : function() {
 			// validacao feita manualmente em funcao do CKEDITOR
 			var titulo = $('#form_new_post input#form_input_title').val();
+			var tags = $('#form_new_post input#form_input_tags').val();
 			var tituloLimpo = stringUtils.removeCaracteresEspeciais(titulo);
 			var conteudo = CKEDITOR.instances.form_input_content.getData();
 			var conteudoLimpo = stringUtils.removeCaracteresEspeciais(conteudo);
@@ -18,7 +19,7 @@ dextranet.post = {
 				$.ajax( {
 					type : "POST",
 					url : "/s/post/",
-					data : { 'titulo' : titulo, 'conteudo' : conteudo },
+					data : { 'titulo' : titulo, 'conteudo' : conteudo, 'tags' : tags },
 					success : function() {
 						$('.message').message($.i18n.messages.post_mensagem_postagem_sucesso, 'success', true);
 						dextranet.post.listar(1);

@@ -13,6 +13,9 @@
 						<div class="speech-shape"></div>
 						<a class="list_stories_headline clearfix" href="#">
 							<h2 class="titulo ${post.id}">${post.titulo}</h2>
+	                        <div class="tags">
+	                            <h3>${post.tags}</h3>
+	                        </div>
 						</a>
 
 						<!-- Lead -->

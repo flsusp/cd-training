@@ -55,6 +55,7 @@
 	"post_novo_titulo" : "Novo Post",
 	"post_titulo" : "Título",
 	"post_titulo_tip" : "Digite o título do novo post...",
+	"post_tags_tip" : "Insira as tags do seu post",
 	"post_conteudo" : "Conteúdo...",
 	"post_conteudo_tip" : "Digite o conteúdo do novo post...",
 	"post_comentario" : "comentário(s)",

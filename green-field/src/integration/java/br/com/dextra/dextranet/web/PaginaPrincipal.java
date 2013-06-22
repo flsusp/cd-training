@@ -2,6 +2,8 @@ package br.com.dextra.dextranet.web;
 
 import java.util.List;
 
+import junit.framework.Assert;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -69,6 +71,6 @@ public class PaginaPrincipal extends PaginaBase {
 	}
 
 	public void confereExistenciaDeTags() {
-		driver.findElement(By.cssSelector("div.tags"));
+		Assert.assertFalse(driver.findElement(By.cssSelector("div.tags")).getText().trim().isEmpty());
 	}
 }
