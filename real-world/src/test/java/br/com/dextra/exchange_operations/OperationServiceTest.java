@@ -25,7 +25,7 @@ public class OperationServiceTest extends BaseFunctionalTest {
 	}
 
 	@Test
-	public void testCreatedOperationByWeb() {
+	public void testCreatedOperationByWebUSD() {
 		OperationPage operation = new OperationPage(8080);
 		operation.start();
 		operation.setValue(100.0);
