@@ -43,7 +43,7 @@ public class OperationService {
 		ExchangeOperation operation = new ExchangeOperation(
 				clientDocument);
 		operation.setValue(value);
-		operation.setCurrency(currency.getCurrencyCode());
+		operation.setCurrency(currency);
 
 		operation.exchange(cashRegister, currencyConverter);
 

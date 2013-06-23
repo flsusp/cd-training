@@ -17,7 +17,7 @@ public class ExchangeOperationTest {
 	@Test
 	public void testExchangeUSD() {
 		ExchangeOperation operation = new ExchangeOperation("123");
-		operation.setCurrency(CurrencyCode.USD);
+		operation.setCurrency(new Currency("USD"));
 		operation.setValue(100.0);
 
 		MockedCashRegister cashRegister = new MockedCashRegister();
@@ -36,7 +36,7 @@ public class ExchangeOperationTest {
 	@Test
 	public void testExchangeEUR() {
 		ExchangeOperation operation = new ExchangeOperation("123");
-		operation.setCurrency(CurrencyCode.EUR);
+		operation.setCurrency(new Currency("EUR"));
 		operation.setValue(100.0);
 
 		MockedCashRegister cashRegister = new MockedCashRegister();

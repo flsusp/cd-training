@@ -43,6 +43,10 @@ public class ExchangeOperation {
 		this.value = value;
 	}
 
+	public void setCurrency(Currency currency) {
+		this.currency = currency.getCurrencyCode();
+	}
+
 	public void setCurrency(CurrencyCode currency) {
 		this.currency = currency;
 	}
