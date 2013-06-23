@@ -12,4 +12,8 @@ public class Currency {
 	public String getCode() {
 		return code;
 	}
+
+	public CurrencyCode getCurrencyCode() {
+		return CurrencyCode.valueOf(code);
+	}
 }

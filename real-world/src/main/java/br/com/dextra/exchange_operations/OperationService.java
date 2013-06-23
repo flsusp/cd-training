@@ -19,22 +19,31 @@ public class OperationService {
 	private final OperationRepository operationRepository;
 	private final CashRegister cashRegister = new JustLogCashRegister();
 	private final CurrencyConverter currencyConverter = new MockedCurrencyConverter();
+	private final CurrencyRepository currencyRepository;
 
 	public OperationService(SQLStoreService service) {
 		super();
-		this.operationRepository = new OperationRepository(service);
+		this.operationRepository = new OperationRepository(
+				service);
+		this.currencyRepository = new CurrencyRepository(
+				service);
 	}
 
 	@POST
 	@Path("")
 	@Produces(MediaType.APPLICATION_JSON + ";charset=UTF-8")
-	public Response createOperation(@FormParam("value") Double value,
-			@FormParam("currency") CurrencyCode currency,
+	public Response createOperation(
+			@FormParam("value") Double value,
+			@FormParam("currency") CurrencyCode currencyCode,
 			@FormParam("clientDocument") String clientDocument) {
 
-		ExchangeOperation operation = new ExchangeOperation(clientDocument);
+		Currency currency = currencyRepository
+				.findByCode(currencyCode.name());
+
+		ExchangeOperation operation = new ExchangeOperation(
+				clientDocument);
 		operation.setValue(value);
-		operation.setCurrency(currency);
+		operation.setCurrency(currency.getCurrencyCode());
 
 		operation.exchange(cashRegister, currencyConverter);
 
