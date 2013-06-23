@@ -29,4 +29,8 @@ public class OperationPage extends BasePageObject {
 	public void assertSuccess() {
 		waitForElement(By.cssSelector(".alert-success"));
 	}
+
+	public void setCurrency(Currency currency) {
+		waitForElement(By.id("currency")).sendKeys(String.valueOf(currency));
+	}
 }

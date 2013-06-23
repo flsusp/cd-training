@@ -28,7 +28,19 @@ public class OperationServiceTest extends BaseFunctionalTest {
 	public void testCreatedOperationByWebUSD() {
 		OperationPage operation = new OperationPage(8080);
 		operation.start();
+		operation.setCurrency(Currency.USD);
 		operation.setValue(100.0);
+		operation.setClient("123");
+		operation.create();
+		operation.assertSuccess();
+	}
+
+	@Test
+	public void testCreatedOperationByWebEUR() {
+		OperationPage operation = new OperationPage(8080);
+		operation.start();
+		operation.setCurrency(Currency.EUR);
+		operation.setValue(300.0);
 		operation.setClient("123");
 		operation.create();
 		operation.assertSuccess();
