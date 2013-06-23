@@ -15,4 +15,5 @@ public class CurrencyRepositoryTest {
 
 		assertEquals("USD", repo.findByCode("USD").getCode());
 	}
+
 }
