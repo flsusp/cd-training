@@ -15,7 +15,7 @@ import br.com.dextra.exchange_operations.currency_converter.MockedCurrencyConver
 public class ExchangeOperationTest {
 
 	@Test
-	public void testExchange() {
+	public void testExchangeUSD() {
 		ExchangeOperation operation = new ExchangeOperation("123");
 		operation.setCurrency(Currency.USD);
 		operation.setValue(100.0);
@@ -31,6 +31,25 @@ public class ExchangeOperationTest {
 		assertEquals(1, cashRegister.credits.size());
 		assertEquals(Currency.BRL, cashRegister.credits.get(0).currency);
 		assertEquals(200.0, cashRegister.credits.get(0).value, 0.01);
+	}
+
+	@Test
+	public void testExchangeEUR() {
+		ExchangeOperation operation = new ExchangeOperation("123");
+		operation.setCurrency(Currency.EUR);
+		operation.setValue(100.0);
+
+		MockedCashRegister cashRegister = new MockedCashRegister();
+
+		operation.exchange(cashRegister, new MockedCurrencyConverter());
+
+		assertEquals(1, cashRegister.debts.size());
+		assertEquals(Currency.EUR, cashRegister.debts.get(0).currency);
+		assertEquals(100.0, cashRegister.debts.get(0).value, 0.01);
+
+		assertEquals(1, cashRegister.credits.size());
+		assertEquals(Currency.BRL, cashRegister.credits.get(0).currency);
+		assertEquals(300.0, cashRegister.credits.get(0).value, 0.01);
 	}
 
 	private static final class MockedCashRegister implements CashRegister {

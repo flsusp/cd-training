@@ -7,7 +7,9 @@ import br.com.dextra.exchange_operations.Currency;
 
 public class JustLogCashRegister implements CashRegister {
 
-	private static final Logger logger = LoggerFactory.getLogger(JustLogCashRegister.class);
+	private static final Logger logger = LoggerFactory
+			.getLogger(JustLogCashRegister.class
+					.getSimpleName());
 
 	@Override
 	public void registerDebt(Currency currency, Double value) {
@@ -15,7 +17,8 @@ public class JustLogCashRegister implements CashRegister {
 	}
 
 	@Override
-	public void registerCredit(Currency currency, Double value) {
+	public void registerCredit(Currency currency,
+			Double value) {
 		logger.info("CREDIT {} {}", currency, value);
 	}
 }

@@ -22,11 +22,19 @@ public class OperationRepository {
 	public void save(ExchangeOperation operation) {
 		SQLStore store = service.get();
 
-		QueryResult result = store.create(OPERATION).with(CLIENT_DOCUMENT, operation.getClientDocument())
-				.with(CURRENCY, operation.getCurrency().name()).with(VALUE, operation.getValue())
-				.with(CREATION_DATE, operation.getCreationDate()).executeAndClose();
+		QueryResult result = store
+				.create(OPERATION)
+				.with(CLIENT_DOCUMENT,
+						operation.getClientDocument())
+				.with(CURRENCY,
+						operation.getCurrency().name())
+				.with(VALUE, operation.getValue())
+				.with(CREATION_DATE,
+						operation.getCreationDate())
+				.executeAndClose();
 
-		long id = result.getGeneratedKeyFor(ID).requireAsLong();
+		long id = result.getGeneratedKeyFor(ID)
+				.requireAsLong();
 		operation.setId(id);
 	}
 }

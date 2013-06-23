@@ -10,7 +10,9 @@ import br.com.dextra.exchange_operations.currency_converter.CurrencyConverter;
 
 public class ExchangeOperation {
 
-	private static final Logger logger = LoggerFactory.getLogger(ExchangeOperation.class);
+	private static final Logger logger = LoggerFactory
+			.getLogger(ExchangeOperation.class
+					.getSimpleName());
 
 	private final String clientDocument;
 	private final Date creationDate;
@@ -23,13 +25,18 @@ public class ExchangeOperation {
 		this.creationDate = new Date();
 	}
 
-	public void exchange(CashRegister cashRegister, CurrencyConverter currencyConverter) {
-		logger.info("Purchase of {} {} for {}.", new Object[] { currency, value, clientDocument });
+	public void exchange(CashRegister cashRegister,
+			CurrencyConverter currencyConverter) {
+		logger.info("Purchase of {} {} for {}.",
+				new Object[] { currency, value,
+						clientDocument });
 
-		double value = currencyConverter.convertToBRL(getCurrency(), getValue());
+		double value = currencyConverter.convertToBRL(
+				getCurrency(), getValue());
 
 		cashRegister.registerCredit(Currency.BRL, value);
-		cashRegister.registerDebt(getCurrency(), getValue());
+		cashRegister
+				.registerDebt(getCurrency(), getValue());
 	}
 
 	public void setValue(Double value) {
