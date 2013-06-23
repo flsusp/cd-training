@@ -11,10 +11,17 @@ import br.com.dextra.test.BaseFunctionalTest;
 public class OperationServiceTest extends BaseFunctionalTest {
 
 	@Test
-	public void testCreateOperation() {
+	public void testCreateOperationUSD() {
 		// Please, be condescending, we are just testing if nothing fails
 		OperationService service = new OperationService(new BoneCPJDBCStoreService());
 		service.createOperation(100.0, Currency.USD, "123");
+	}
+
+	@Test
+	public void testCreateOperationEUR() {
+		// Please, be condescending, we are just testing if nothing fails
+		OperationService service = new OperationService(new BoneCPJDBCStoreService());
+		service.createOperation(300.0, Currency.EUR, "123");
 	}
 
 	@Test
