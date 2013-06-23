@@ -32,11 +32,11 @@ public class ExchangeOperation {
 						clientDocument });
 
 		double value = currencyConverter.convertToBRL(
-				getCurrency(), getValue());
+				getCurrencyCode(), getValue());
 
 		cashRegister.registerCredit(CurrencyCode.BRL, value);
 		cashRegister
-				.registerDebt(getCurrency(), getValue());
+				.registerDebt(getCurrencyCode(), getValue());
 	}
 
 	public void setValue(Double value) {
@@ -45,10 +45,6 @@ public class ExchangeOperation {
 
 	public void setCurrency(Currency currency) {
 		this.currency = currency.getCurrencyCode();
-	}
-
-	public void setCurrency(CurrencyCode currency) {
-		this.currency = currency;
 	}
 
 	protected String getClientDocument() {
@@ -63,7 +59,7 @@ public class ExchangeOperation {
 		return value;
 	}
 
-	protected CurrencyCode getCurrency() {
+	protected CurrencyCode getCurrencyCode() {
 		return currency;
 	}
 
