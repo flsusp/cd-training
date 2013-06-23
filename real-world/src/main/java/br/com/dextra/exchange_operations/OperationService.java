@@ -34,11 +34,11 @@ public class OperationService {
 	@Produces(MediaType.APPLICATION_JSON + ";charset=UTF-8")
 	public Response createOperation(
 			@FormParam("value") Double value,
-			@FormParam("currency") CurrencyCode currencyCode,
+			@FormParam("currency") String currencyCode,
 			@FormParam("clientDocument") String clientDocument) {
 
 		Currency currency = currencyRepository
-				.findByCode(currencyCode.name());
+				.findByCode(currencyCode);
 
 		ExchangeOperation operation = new ExchangeOperation(
 				clientDocument);

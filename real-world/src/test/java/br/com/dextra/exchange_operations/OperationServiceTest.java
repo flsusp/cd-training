@@ -14,14 +14,14 @@ public class OperationServiceTest extends BaseFunctionalTest {
 	public void testCreateOperationUSD() {
 		// Please, be condescending, we are just testing if nothing fails
 		OperationService service = new OperationService(new BoneCPJDBCStoreService());
-		service.createOperation(100.0, CurrencyCode.USD, "123");
+		service.createOperation(100.0, "USD", "123");
 	}
 
 	@Test
 	public void testCreateOperationEUR() {
 		// Please, be condescending, we are just testing if nothing fails
 		OperationService service = new OperationService(new BoneCPJDBCStoreService());
-		service.createOperation(300.0, CurrencyCode.EUR, "123");
+		service.createOperation(300.0, "EUR", "123");
 	}
 
 	@Test
