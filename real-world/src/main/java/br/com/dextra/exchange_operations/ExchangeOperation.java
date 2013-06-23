@@ -34,10 +34,11 @@ public class ExchangeOperation {
 		double value = currencyConverter.convertToBRL(
 				getCurrency(), getValue());
 
+		// FIXME: Load BRL from database
+		cashRegister.registerCredit(new Currency("BRL"),
+				value);
 		cashRegister
-				.registerCredit(CurrencyCode.BRL, value);
-		cashRegister.registerDebt(getCurrency()
-				.getCurrencyCode(), getValue());
+				.registerDebt(getCurrency(), getValue());
 	}
 
 	public void setValue(Double value) {

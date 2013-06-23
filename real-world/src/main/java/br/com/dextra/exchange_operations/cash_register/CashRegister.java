@@ -1,10 +1,10 @@
 package br.com.dextra.exchange_operations.cash_register;
 
-import br.com.dextra.exchange_operations.CurrencyCode;
+import br.com.dextra.exchange_operations.Currency;
 
 public interface CashRegister {
 
-	void registerDebt(CurrencyCode currency, Double value);
+	void registerDebt(Currency currency, Double value);
 
-	void registerCredit(CurrencyCode currency, Double value);
+	void registerCredit(Currency currency, Double value);
 }
