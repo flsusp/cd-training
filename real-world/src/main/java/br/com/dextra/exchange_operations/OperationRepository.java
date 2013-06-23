@@ -27,7 +27,7 @@ public class OperationRepository {
 				.with(CLIENT_DOCUMENT,
 						operation.getClientDocument())
 				.with(CURRENCY,
-						operation.getCurrencyCode().name())
+						operation.getCurrency().getCode())
 				.with(VALUE, operation.getValue())
 				.with(CREATION_DATE,
 						operation.getCreationDate())
