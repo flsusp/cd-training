@@ -18,11 +18,12 @@
 				$('#submit').click(function() {
 					var value = $('form input#value').val();
 					var client = $('form input#client').val();
+					var currency = $('form input#currency').val();
 
 					$.ajax({
 						url: 'r/operation',
 						type: 'POST',
-						data: { value : value, clientDocument : client, currency : 'USD' },
+						data: { value : value, clientDocument : client, currency : currency },
 						success: function() {
 							$('.messages').html('<div class="alert alert-success">Opera&ccedil;&atilde;o criada com sucesso!</div>');
 						},
