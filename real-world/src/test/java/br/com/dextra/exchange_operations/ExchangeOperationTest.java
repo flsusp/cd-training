@@ -7,8 +7,6 @@ import java.util.List;
 
 import org.junit.Test;
 
-import br.com.dextra.exchange_operations.CurrencyCode;
-import br.com.dextra.exchange_operations.ExchangeOperation;
 import br.com.dextra.exchange_operations.cash_register.CashRegister;
 import br.com.dextra.exchange_operations.currency_converter.MockedCurrencyConverter;
 
@@ -72,11 +70,10 @@ public class ExchangeOperationTest {
 
 		private static final class Moviment {
 
-			private CurrencyCode currency;
+			private Currency currency;
 			private Double value;
 
-			public Moviment(CurrencyCode currency,
-					Double value) {
+			public Moviment(Currency currency, Double value) {
 				super();
 				this.currency = currency;
 				this.value = value;
@@ -86,15 +83,13 @@ public class ExchangeOperationTest {
 		@Override
 		public void registerDebt(Currency currency,
 				Double value) {
-			debts.add(new Moviment(currency
-					.getCurrencyCode(), value));
+			debts.add(new Moviment(currency, value));
 		}
 
 		@Override
 		public void registerCredit(Currency currency,
 				Double value) {
-			credits.add(new Moviment(currency
-					.getCurrencyCode(), value));
+			credits.add(new Moviment(currency, value));
 		}
 	}
 }
