@@ -2,12 +2,14 @@ package br.com.dextra.sqlstore.impl;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Collection;
 
 import br.com.dextra.sqlstore.Data;
 import br.com.dextra.sqlstore.Field;
 import br.com.dextra.sqlstore.QueryResult;
 import br.com.dextra.sqlstore.QueryResultArray;
+import br.com.dextra.sqlstore.SimpleData;
 import br.com.dextra.sqlstore.Value;
 
 public class JDBCQueryResult implements QueryResult {
@@ -31,7 +33,19 @@ public class JDBCQueryResult implements QueryResult {
 
 	@Override
 	public Collection<Data> list() {
-		throw new UnsupportedOperationException();
+		try {
+			Collection<Data> list = new ArrayList<Data>();
+			while (resultSet.next()) {
+				// FIXME: percorrer o resultset
+				SimpleData data = new SimpleData();
+				data.put("CODE",
+						resultSet.getObject("CODE"));
+				list.add(data);
+			}
+			return list;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
 	}
 
 	@Override
