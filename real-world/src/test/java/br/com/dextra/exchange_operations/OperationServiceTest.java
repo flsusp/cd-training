@@ -14,14 +14,14 @@ public class OperationServiceTest extends BaseFunctionalTest {
 	public void testCreateOperationUSD() {
 		// Please, be condescending, we are just testing if nothing fails
 		OperationService service = new OperationService(new BoneCPJDBCStoreService());
-		service.createOperation(100.0, Currency.USD, "123");
+		service.createOperation(100.0, CurrencyCode.USD, "123");
 	}
 
 	@Test
 	public void testCreateOperationEUR() {
 		// Please, be condescending, we are just testing if nothing fails
 		OperationService service = new OperationService(new BoneCPJDBCStoreService());
-		service.createOperation(300.0, Currency.EUR, "123");
+		service.createOperation(300.0, CurrencyCode.EUR, "123");
 	}
 
 	@Test
@@ -38,7 +38,7 @@ public class OperationServiceTest extends BaseFunctionalTest {
 	public void testCreatedOperationByWebUSD() {
 		OperationPage operation = new OperationPage(8080);
 		operation.start();
-		operation.setCurrency(Currency.USD);
+		operation.setCurrency(CurrencyCode.USD);
 		operation.setValue(100.0);
 		operation.setClient("123");
 		operation.create();
@@ -49,7 +49,7 @@ public class OperationServiceTest extends BaseFunctionalTest {
 	public void testCreatedOperationByWebEUR() {
 		OperationPage operation = new OperationPage(8080);
 		operation.start();
-		operation.setCurrency(Currency.EUR);
+		operation.setCurrency(CurrencyCode.EUR);
 		operation.setValue(300.0);
 		operation.setClient("123");
 		operation.create();

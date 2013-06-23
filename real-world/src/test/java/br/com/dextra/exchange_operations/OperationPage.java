@@ -30,7 +30,7 @@ public class OperationPage extends BasePageObject {
 		waitForElement(By.cssSelector(".alert-success"));
 	}
 
-	public void setCurrency(Currency currency) {
+	public void setCurrency(CurrencyCode currency) {
 		selectOptionByValue(By.id("currency"), currency.name());
 	}
 }

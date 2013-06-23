@@ -29,7 +29,7 @@ public class OperationService {
 	@Path("")
 	@Produces(MediaType.APPLICATION_JSON + ";charset=UTF-8")
 	public Response createOperation(@FormParam("value") Double value,
-			@FormParam("currency") Currency currency,
+			@FormParam("currency") CurrencyCode currency,
 			@FormParam("clientDocument") String clientDocument) {
 
 		ExchangeOperation operation = new ExchangeOperation(clientDocument);
