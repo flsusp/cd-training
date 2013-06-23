@@ -17,7 +17,7 @@ public class ExchangeOperation {
 	private final String clientDocument;
 	private final Date creationDate;
 	private Double value;
-	private CurrencyCode currency;
+	private Currency currency;
 	private Long id;
 
 	public ExchangeOperation(String clientDocument) {
@@ -34,9 +34,10 @@ public class ExchangeOperation {
 		double value = currencyConverter.convertToBRL(
 				getCurrencyCode(), getValue());
 
-		cashRegister.registerCredit(CurrencyCode.BRL, value);
 		cashRegister
-				.registerDebt(getCurrencyCode(), getValue());
+				.registerCredit(CurrencyCode.BRL, value);
+		cashRegister.registerDebt(getCurrencyCode(),
+				getValue());
 	}
 
 	public void setValue(Double value) {
@@ -44,7 +45,7 @@ public class ExchangeOperation {
 	}
 
 	public void setCurrency(Currency currency) {
-		this.currency = currency.getCurrencyCode();
+		this.currency = currency;
 	}
 
 	protected String getClientDocument() {
@@ -60,7 +61,7 @@ public class ExchangeOperation {
 	}
 
 	protected CurrencyCode getCurrencyCode() {
-		return currency;
+		return currency.getCurrencyCode();
 	}
 
 	protected Long getId() {
