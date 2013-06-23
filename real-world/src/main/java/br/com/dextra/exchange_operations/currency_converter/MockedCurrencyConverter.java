@@ -1,14 +1,14 @@
 package br.com.dextra.exchange_operations.currency_converter;
 
-import br.com.dextra.exchange_operations.CurrencyCode;
+import br.com.dextra.exchange_operations.Currency;
 
 public class MockedCurrencyConverter implements
 		CurrencyConverter {
 
 	@Override
-	public double convertToBRL(CurrencyCode currency,
+	public double convertToBRL(Currency currency,
 			double value) {
-		if (currency == CurrencyCode.USD)
+		if (currency.getCode().equals("USD"))
 			return value * 2;
 		else
 			return value * 3;
