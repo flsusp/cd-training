@@ -25,13 +25,13 @@ public class ExchangeOperationTest {
 				new MockedCurrencyConverter());
 
 		assertEquals(1, cashRegister.debts.size());
-		assertEquals(CurrencyCode.USD,
+		assertEquals(new Currency("USD"),
 				cashRegister.debts.get(0).currency);
 		assertEquals(100.0,
 				cashRegister.debts.get(0).value, 0.01);
 
 		assertEquals(1, cashRegister.credits.size());
-		assertEquals(CurrencyCode.BRL,
+		assertEquals(new Currency("BRL"),
 				cashRegister.credits.get(0).currency);
 		assertEquals(200.0,
 				cashRegister.credits.get(0).value, 0.01);
@@ -50,13 +50,13 @@ public class ExchangeOperationTest {
 				new MockedCurrencyConverter());
 
 		assertEquals(1, cashRegister.debts.size());
-		assertEquals(CurrencyCode.EUR,
+		assertEquals(new Currency("EUR"),
 				cashRegister.debts.get(0).currency);
 		assertEquals(100.0,
 				cashRegister.debts.get(0).value, 0.01);
 
 		assertEquals(1, cashRegister.credits.size());
-		assertEquals(CurrencyCode.BRL,
+		assertEquals(new Currency("BRL"),
 				cashRegister.credits.get(0).currency);
 		assertEquals(300.0,
 				cashRegister.credits.get(0).value, 0.01);
