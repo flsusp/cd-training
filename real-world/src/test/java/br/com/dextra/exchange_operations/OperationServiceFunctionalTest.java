@@ -5,7 +5,9 @@ import java.util.Random;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.Test;
 
-public class OperationServiceFunctionalTest {
+import br.com.dextra.test.BaseFunctionalTest;
+
+public class OperationServiceFunctionalTest extends BaseFunctionalTest {
 
 	@Test
 	public void testCreatedOperationByWebWithoutCurrrency() {

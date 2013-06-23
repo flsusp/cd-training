@@ -15,6 +15,20 @@
 
         <script type="text/javascript">
 			$(document).ready(function() {
+
+                $.ajax({
+                    url: 'r/currency',
+                    type: 'GET',
+                    success: function(currencies) {
+                    	for (index in currencies) {
+                    		$('#currency').append('<option value="' + currencies[index].code + '">' + currencies[index].code + '</option>');
+                    	}
+                    },
+                    error: function() {
+                        $('.messages').html('<div class="alert alert-error">Erro ao obter moeda!</div>');
+                    }
+                });
+
 				$('#submit').click(function() {
 					var value = $('form input#value').val();
 					var client = $('form input#client').val();
@@ -60,8 +74,6 @@
                     <label class="control-label" for="currency">Moeda</label>
                     <div class="controls">
                         <select id="currency" name="currency">
-                            <option value="USD" selected>USD</option>
-                            <option value="EUR">EUR</option>
                         </select>
                     </div>
                 </div>

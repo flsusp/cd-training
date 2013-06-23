@@ -12,6 +12,11 @@ public class OperationPage extends BasePageObject {
 
 	public void start() {
 		open("index.html");
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			throw new RuntimeException(e);
+		}
 	}
 
 	public void setValue(double value) {
