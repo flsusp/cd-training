@@ -38,7 +38,7 @@ public class OperationServiceTest extends BaseFunctionalTest {
 	public void testCreatedOperationByWebUSD() {
 		OperationPage operation = new OperationPage(8080);
 		operation.start();
-		operation.setCurrency(CurrencyCode.USD);
+		operation.setCurrency("USD");
 		operation.setValue(100.0);
 		operation.setClient("123");
 		operation.create();
@@ -49,7 +49,7 @@ public class OperationServiceTest extends BaseFunctionalTest {
 	public void testCreatedOperationByWebEUR() {
 		OperationPage operation = new OperationPage(8080);
 		operation.start();
-		operation.setCurrency(CurrencyCode.EUR);
+		operation.setCurrency("EUR");
 		operation.setValue(300.0);
 		operation.setClient("123");
 		operation.create();

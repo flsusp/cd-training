@@ -13,10 +13,6 @@ public class Currency {
 		return code;
 	}
 
-	public CurrencyCode getCurrencyCode() {
-		return CurrencyCode.valueOf(code);
-	}
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
