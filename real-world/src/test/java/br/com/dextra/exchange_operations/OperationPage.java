@@ -1,6 +1,7 @@
 package br.com.dextra.exchange_operations;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 import br.com.dextra.test.BasePageObject;
 
@@ -31,6 +32,8 @@ public class OperationPage extends BasePageObject {
 	}
 
 	public void setCurrency(Currency currency) {
-		waitForElement(By.id("currency")).sendKeys(String.valueOf(currency));
+		WebElement element = waitForElement(By.id("currency"));
+		element.clear();
+		element.sendKeys(String.valueOf(currency));
 	}
 }
