@@ -18,7 +18,7 @@
 				$('#submit').click(function() {
 					var value = $('form input#value').val();
 					var client = $('form input#client').val();
-					var currency = $('form input#currency').val();
+					var currency = $('form select#currency option:selected').val();
 
 					$.ajax({
 						url: 'r/operation',
@@ -59,7 +59,10 @@
 			    <div class="control-group">
                     <label class="control-label" for="currency">Moeda</label>
                     <div class="controls">
-                        <input value="USD" type="text" id="currency" name="currency" placeholder="Moeda">
+                        <select id="currency" name="currency">
+                            <option value="USD" selected>USD</option>
+                            <option value="EUR">EUR</option>
+                        </select>
                     </div>
                 </div>
 
