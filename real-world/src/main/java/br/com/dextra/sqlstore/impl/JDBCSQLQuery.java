@@ -46,7 +46,7 @@ public class JDBCSQLQuery extends SQLQuery {
 		try {
 			PreparedStatement stmt = connection.prepareStatement(sql);
 			for (int i = 0; i < params.length; i++) {
-				setStatementParameter(stmt, i, params[i]);
+				setStatementParameter(stmt, i + 1, params[i]);
 			}
 
 			ResultSet rs = stmt.executeQuery();

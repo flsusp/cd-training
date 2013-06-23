@@ -22,10 +22,7 @@ public class JDBCQueryResult implements QueryResult {
 	@Override
 	public Data unique() {
 		try {
-			if (!this.resultSet.last()) {
-				throw new RuntimeException("Empty result set");
-			}
-
+			this.resultSet.next();
 			return new ResultSetData(this.resultSet);
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
